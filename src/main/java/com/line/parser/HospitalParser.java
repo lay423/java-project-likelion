@@ -16,7 +16,8 @@ public class HospitalParser implements Parser<Hospital> {
 
 
         String[] districtArr = splitted[1].split(" ");
-        String district = districtArr[0] + " " + districtArr[1]+"\'";
+        //String district = districtArr[0] + " " + districtArr[1]+"\'";
+        String district = districtArr[0] + " " + districtArr[1];
 
 
         return new Hospital(splitted[0], splitted[1], district,
