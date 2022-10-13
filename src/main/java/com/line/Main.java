@@ -16,7 +16,7 @@ public class Main {
 
         List<String> strings = new ArrayList<>();
         List<Hospital> hospitals = hospitalLineReader.readLines(filename);
-        strings.add("SELECT * FROM sns.user;INSERT INTO `hospital`.`seoul_hospital`\n" +
+        strings.add("INSERT INTO `hospital`.`seoul_hospital`\n" +
                 "(`id`,\n" +
                 "`address`,\n" +
                 "`district`,\n" +
