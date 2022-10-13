@@ -13,9 +13,9 @@ public class FileWriter {
                 + hospital.getDistrict() + "\',\'"
                 + hospital.getCategory() + "\',"
                 + hospital.getEmergency_room() + ",\'"
-                + hospital.getName() + "\',\'"
+                + hospital.getName() + "\',"
                 + hospital.getSubdivision()
-                + "\'),\n";
+                + "),\n";
     }
     public void write(List<String> strs, String filename) {
         File file = new File(filename);
