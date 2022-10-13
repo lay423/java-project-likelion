@@ -26,7 +26,7 @@ public class Main {
                 "`subdivision`)\n" +
                 "VALUES");
         for (Hospital hospital : hospitals) {
-            strings.add("("+writer.fromTOString(hospital));
+            strings.add(writer.fromTOString(hospital));
         }
         strings.add(";");
         writer.write(strings, "hospital_data.sql");

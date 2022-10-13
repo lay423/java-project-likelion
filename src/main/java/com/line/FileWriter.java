@@ -8,14 +8,14 @@ import java.util.List;
 public class FileWriter {
 
     public String fromTOString(Hospital hospital){
-        return hospital.getId() + ","
-                + hospital.getAddress() + ","
-                + hospital.getDistrict() + ","
-                + hospital.getCategory() + ","
-                + hospital.getEmergency_room() + ","
-                + hospital.getName() + ","
+        return "(\'"+hospital.getId() + "\',\'"
+                + hospital.getAddress() + "\',\'"
+                + hospital.getDistrict() + "\',\'"
+                + hospital.getCategory() + "\',"
+                + hospital.getEmergency_room() + ",\'"
+                + hospital.getName() + "\',\'"
                 + hospital.getSubdivision()
-                + "),\n";
+                + "\'),\n";
     }
     public void write(List<String> strs, String filename) {
         File file = new File(filename);
