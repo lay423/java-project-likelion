@@ -1,0 +1,8 @@
+*.iml
+.idea/
+out/
+/2021_인구관련연간자료_20221006_11746.csv
+/from_to.txt
+/each_sido_cnt.txt
+/hospital_data.sql
+/hospital_data.txt
