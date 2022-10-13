@@ -23,15 +23,37 @@ public class Hospital {
         this.subdivision = subdivision;
     }
 
-    public String getSqlInsertquery(){
-        String sql = String.format("SELECT * FROM sns.user;INSERT INTO `hospital`.`seoul_hospital`\n" +
+    public String getSqlInsertquery2() {
+        String sql = String.format("INSERT INTO `hospital`.`seoul_hospital`\n" +
                 "(`id`,\n" +
                 "`address`,\n" +
                 "`district`,\n" +
                 "`category`,\n" +
                 "`emergency_room`,\n" +
                 "`name`,\n" +
-                "`subdivision`)\nVALUES"+"(\'"+this.getId() + "\',\'"
+                "`subdivision`)\nVALUES" +
+                "(\'%s\',\n" +
+                "(\'%s\',\n" +
+                "(\'%s\',\n" +
+                "(\'%s\',\n" +
+                "(\'%d\',\n" +
+                "(\'%s\',\n" +
+                "(%s);\n",
+                this.getId(), this.getAddress(), this.getDistrict(),
+                this.getCategory(), this.getEmergency_room(),
+                this.getName(), this.getSubdivision());
+        return sql;
+    }
+
+    public String getSqlInsertquery() {
+        String sql = String.format("INSERT INTO `hospital`.`seoul_hospital`\n" +
+                "(`id`,\n" +
+                "`address`,\n" +
+                "`district`,\n" +
+                "`category`,\n" +
+                "`emergency_room`,\n" +
+                "`name`,\n" +
+                "`subdivision`)\nVALUES" + "(\'" + this.getId() + "\',\'"
                 + this.getAddress() + "\',\'"
                 + this.getDistrict() + "\',\'"
                 + this.getCategory() + "\',"
