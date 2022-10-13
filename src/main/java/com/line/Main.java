@@ -28,7 +28,7 @@ public class Main {
         for (Hospital hospital : hospitals) {
             strings.add(writer.fromTOString(hospital));
         }
-        strings.add(";");
+        strings.add("마지막에 ,지우고 ; 추가");
         writer.write(strings, "hospital_data.sql");
     }
 }
