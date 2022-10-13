@@ -23,6 +23,25 @@ public class Hospital {
         this.subdivision = subdivision;
     }
 
+    public String getSqlInsertquery(){
+        String sql = String.format("SELECT * FROM sns.user;INSERT INTO `hospital`.`seoul_hospital`\n" +
+                "(`id`,\n" +
+                "`address`,\n" +
+                "`district`,\n" +
+                "`category`,\n" +
+                "`emergency_room`,\n" +
+                "`name`,\n" +
+                "`subdivision`)\nVALUES"+"(\'"+this.getId() + "\',\'"
+                + this.getAddress() + "\',\'"
+                + this.getDistrict() + "\',\'"
+                + this.getCategory() + "\',"
+                + this.getEmergency_room() + ",\'"
+                + this.getName() + "\',"
+                + this.getSubdivision()
+                + ");\n");
+        return sql;
+    }
+
     public String getId() {
         return id;
     }
