@@ -6,3 +6,6 @@ out/
 /each_sido_cnt.txt
 /hospital_data.sql
 /hospital_data.txt
+.gradle/
+build/
+gradle/
