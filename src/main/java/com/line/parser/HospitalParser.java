@@ -10,9 +10,9 @@ public class HospitalParser implements Parser<Hospital> {
 
         for (int i = 0; i < splitted.length; i++) {
             splitted[i] = splitted[i].replace('\'', '\\');
-            splitted[i] = splitted[i].replace('\"', '\'');
+            splitted[i] = splitted[i].replace("\"", "");
         }
-        splitted[6] = String.valueOf(splitted[6].charAt(1));
+        //splitted[6] = String.valueOf(splitted[6].charAt(1));
 
 
         String[] districtArr = splitted[1].split(" ");
