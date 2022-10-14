@@ -1,4 +1,7 @@
-# java-project
+# java-project-likeLion
+
+## 2022.10.14
+1. `sort` : 삽입정렬
 
 ## 2022.10.13
 1. `sort` : 버블정렬, 선택정렬
