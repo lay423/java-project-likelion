@@ -12,10 +12,9 @@ public class Main {
         LineReader<Hospital> hospitalLineReader
                 = new LineReader<>(new HospitalParser());
         String filename = "C:\\Users\\A\\springedu\\Hospital_ifo.csv";
-
+        FileWriter writer = new FileWriter();
 
         List<String> strings = new ArrayList<>();
-        List<String> strings1 = new ArrayList<>();
         List<Hospital> hospitals = hospitalLineReader.readLines(filename);
         strings.add("INSERT INTO `hospital`.`seoul_hospital`\n" +
                 "(`id`,\n" +
@@ -26,15 +25,11 @@ public class Main {
                 "`name`,\n" +
                 "`subdivision`)\n" +
                 "VALUES");
-//        for (Hospital hospital : hospitals) {
-//            strings.add(writer.fromTOString(hospital));
-//        }
+        for (Hospital hospital : hospitals) {
+            strings.add(hospital.getSqlInsertquery3());
+        }
 
         strings.add("마지막에 ,지우고 ; 추가");
-        FileWriter writer = new FileWriter();
-        for (Hospital hospital : hospitals) {
-            strings1.add(hospital.getSqlInsertquery());
-        }
-        writer.write(strings1, "hospital_data.sql");
+        writer.write(strings, "hospital_data.sql");
     }
 }
