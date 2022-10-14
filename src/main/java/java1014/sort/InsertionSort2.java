@@ -27,11 +27,7 @@ public class InsertionSort2 {
         System.out.println(Arrays.toString(result));
     /*
         [8, 5, 6, 2, 4]
-        1회전 : [5, 8, 6, 2, 4]
-        2회전 : [5, 6, 8, 2, 4]
-        3회전 : [2, 5, 6, 8, 4]
-        4회전 : [2, 4, 5, 6, 8]
-        [2, 4, 5, 6, 8]
+        [5, 8, 6, 2, 4]
     */
     }
 }
