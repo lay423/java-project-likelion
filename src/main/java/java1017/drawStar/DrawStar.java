@@ -33,13 +33,24 @@ public class DrawStar {
     }
 
     public void drawRhombus(int n) {
-        for (int i = 0; i <= n / 2; i++) {
-            printRhombus(n, i);
-        }
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            printRhombus(n, i);
+        if (n % 2 == 0) {
+            for (int i = 0; i < n / 2; i++) {
+                printRhombus(n, i);
+            }
+            for (int i = n / 2 - 1; i >= 0; i--) {
+                printRhombus(n, i);
+            }
+        }else {
+            for (int i = 0; i <= n / 2; i++) {
+                printRhombus(n, i);
+            }
+            for (int i = n / 2 - 1; i >= 0; i--) {
+                printRhombus(n, i);
+            }
         }
     }
+
+
 
     private void printRhombus(int n, int i) {
         for (int j = n / 2 - i; j > 0; j--) {
@@ -48,6 +59,13 @@ public class DrawStar {
         for (int j = (i + 1) * 2 - 1; j > 0; j--) {
             System.out.print(c);
         }
+        System.out.println();
+    }
+
+
+
+
+    public void drawEvenRhombus(int n) {
         System.out.println();
     }
 }
