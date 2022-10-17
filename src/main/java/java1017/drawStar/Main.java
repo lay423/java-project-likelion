@@ -8,14 +8,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         star.drawRhombus(num);
-
-    /*
-        5
-          *
-         ***
-        *****
-         ***
-          *
-     */
+        int j=1;
+        for (int i = 21; i <= 30; i++) {
+            System.out.println("ps.setString("+i+", this.team"+j+");");
+            j++;
+        }
     }
 }
