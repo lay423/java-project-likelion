@@ -31,4 +31,25 @@ public class DrawStar {
             System.out.println();
         }
     }
+
+    public void drawRhombus(int n) {
+        for (int i = 0; i <= n / 2; i++) {
+            for (int j = n / 2 - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = (i + 1) * 2 - 1; j > 0; j--) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            for (int j = n / 2 - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = (i + 1) * 2 - 1; j > 0; j--) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
 }

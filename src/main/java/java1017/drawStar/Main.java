@@ -7,7 +7,15 @@ public class Main {
         DrawStar star = new DrawStar('*');
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-        star.drawPyramid(num);
+        star.drawRhombus(num);
 
+    /*
+        5
+          *
+         ***
+        *****
+         ***
+          *
+     */
     }
 }
