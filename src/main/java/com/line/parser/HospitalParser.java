@@ -6,7 +6,8 @@ public class HospitalParser implements Parser<Hospital> {
 
     private String getSubdivision(String name) {
         String subdivision = null;
-        String[] subdivisionTypes = {"내과", "치과", "피부과", "외과", "성형외과", "가정의학과", "소아과", "한의원", };
+        String[] subdivisionTypes = {"내과", "치과", "피부과", "이비인후과",
+                "외과", "성형외과", "가정의학과", "소아과", "한의원", };
         for (String subdivisionType : subdivisionTypes) {
             if(name.contains(subdivisionType)){
                 subdivision = "\'"+subdivisionType+"\'";

@@ -1,6 +1,5 @@
 package java1014.sort;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Codeup1443 {
