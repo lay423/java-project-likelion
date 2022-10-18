@@ -15,19 +15,11 @@ public class HospitalDao {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(dbHost, dbUser, dbPassword);
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO `hospital`.`seoul_hospital`\n" +
-                "(`id`,\n" +
-                "`address`,\n" +
-                "`district`,\n" +
-                "`category`,\n" +
-                "`emergency_room`,\n" +
-                "`name`,\n" +
-                "`subdivision`)\n" +
-                "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?");
-        ps.setString(1, "3");
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO seoul_hospital(id,address,district,category,emergency_room,name,subdivision) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        ps.setString(1, "testkey2");
         ps.setString(2, "강남구청 집돌이에");
         ps.setString(3, "서울특별시 강남구");
-        ps.setString(4, "N");
+        ps.setString(4, "C");
         ps.setString(5, "2");
         ps.setString(6, "병원이름병원");
         ps.setString(7, "치과");
@@ -46,10 +38,8 @@ public class HospitalDao {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(dbHost, dbUser, dbPassword);
-        PreparedStatement ps = conn.prepareStatement("SELECT id, address, district" +
-                "category, emergency_room, name, subdivision FROM `hospital`.`seoul_hospital`" +
-                "WHERE id = ?");
-        ps.setString(1, "1");
+        PreparedStatement ps = conn.prepareStatement("SELECT id, address, district, category, emergency_room, name, subdivision FROM seoul_hospital WHERE id = ?");
+        ps.setString(1, "testkey2");
 
         ResultSet rs = ps.executeQuery();
         rs.next();
@@ -67,6 +57,15 @@ public class HospitalDao {
         conn.close();
 
         return hospital;
+    }
+
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        HospitalDao hospitalDao = new HospitalDao();
+        Hospital hospital;
+        //hospitalDao.add();
+        hospital = hospitalDao.get();
+        System.out.println(hospital.getSqlInsertquery3());
+
     }
 
 }
