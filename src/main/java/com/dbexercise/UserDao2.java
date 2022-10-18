@@ -8,14 +8,15 @@ import java.util.List;
 import java.util.Map;
 
 public class UserDao2 {
-    public void add(User user) throws SQLException, ClassNotFoundException {
-        Map<String, String> env = System.getenv();
-        String dbHost = env.get("DB_HOST");
-        String dbUser = env.get("DB_USER");
-        String dbPassword = env.get("DB_PASSWORD");
 
+    private Connection makeConnection() throws SQLException, ClassNotFoundException {
+        Map<String, String> env = System.getenv();
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(dbHost, dbUser, dbPassword);  //db 연결
+        Connection conn = DriverManager.getConnection(env.get("DB_HOST"), env.get("DB_USER"), env.get("DB_PASSWORD"));  //db 연결
+        return conn;
+    }
+    public void add(User user) throws SQLException, ClassNotFoundException {
+        Connection conn = makeConnection();//db 연결
         PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
         ps.setString(1, user.getId());
         ps.setString(2, user.getName());
@@ -27,13 +28,7 @@ public class UserDao2 {
     }
 
     public User get(String id) throws ClassNotFoundException, SQLException {
-        Map<String, String> env = System.getenv();
-        String dbHost = env.get("DB_HOST");
-        String dbUser = env.get("DB_USER");
-        String dbPassword = env.get("DB_PASSWORD");
-
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(dbHost, dbUser, dbPassword);  //db 연결
+        Connection conn = makeConnection();//db 연결
         PreparedStatement ps = conn.prepareStatement("SELECT id, name, password FROM users WHERE ID =?");
         ps.setString(1, id);
 
@@ -49,13 +44,7 @@ public class UserDao2 {
     }
 
     public List<User> findAll() throws ClassNotFoundException, SQLException {
-        Map<String, String> env = System.getenv();
-        String dbHost = env.get("DB_HOST");
-        String dbUser = env.get("DB_USER");
-        String dbPassword = env.get("DB_PASSWORD");
-
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(dbHost, dbUser, dbPassword);  //db 연결
+        Connection conn = makeConnection();//db 연결
         PreparedStatement ps = conn.prepareStatement("SELECT id, name, password FROM users");
 
         ResultSet rs = ps.executeQuery();

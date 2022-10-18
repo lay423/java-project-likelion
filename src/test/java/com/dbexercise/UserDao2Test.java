@@ -13,10 +13,10 @@ class UserDao2Test {
     @Test
     void addAndSelect() throws SQLException, ClassNotFoundException {
         UserDao2 userDao2 = new UserDao2();
-        User user = new User("5", "aquaMan", "22");
-        userDao2.add(user);
+        User user = new User("6", "aquaMan", "22");
+       // userDao2.add(user);
 
-        User selectedUser = userDao2.get("5");
+        User selectedUser = userDao2.get("6");
         Assertions.assertEquals("aquaMan", selectedUser.getName());
 
     }
