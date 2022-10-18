@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UserDao2 {
-    public void add() throws SQLException, ClassNotFoundException {
+    public void add(User user) throws SQLException, ClassNotFoundException {
         Map<String, String> env = System.getenv();
         String dbHost = env.get("DB_HOST");
         String dbUser = env.get("DB_USER");
@@ -17,9 +17,9 @@ public class UserDao2 {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(dbHost, dbUser, dbPassword);  //db 연결
         PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
-        ps.setString(1, "3");
-        ps.setString(2, "junhai");
-        ps.setString(3, "1123");
+        ps.setString(1, user.getId());
+        ps.setString(2, user.getName());
+        ps.setString(3, user.getPassword());
 
         ps.executeUpdate();
         ps.close();
@@ -73,12 +73,12 @@ public class UserDao2 {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         UserDao2 userDao2 = new UserDao2();
-        //userDao2.add();
-        User user = userDao2.get("1");
-        System.out.println(user.getName());
-        List<User> userList = userDao2.findAll();
-        for (User user1 : userList) {
-            System.out.println(user1.getName());
-        }
+//        userDao2.add("4", "superMan", "12334");
+//        User user = userDao2.get("1");
+//        System.out.println(user.getName());
+//        List<User> userList = userDao2.findAll();
+//        for (User user1 : userList) {
+//            System.out.println(user1.getName());
+//        }
     }
 }
