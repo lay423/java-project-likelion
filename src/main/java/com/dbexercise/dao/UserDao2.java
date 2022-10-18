@@ -8,10 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 public class UserDao2 {
-    AWSConnectionMaker awsConnectionMaker = new AWSConnectionMaker();
+    private ConnectionMaker connectionMaker;
+
+    public UserDao2() {
+        connectionMaker = new AWSConnectionMaker();
+    }
 
     public void add(User user) throws SQLException, ClassNotFoundException {
-        Connection conn = awsConnectionMaker.makeConnection();
+        Connection conn = connectionMaker.makeConnection();
         PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
         ps.setString(1, user.getId());
         ps.setString(2, user.getName());
@@ -23,7 +27,7 @@ public class UserDao2 {
     }
 
     public User get(String id) throws ClassNotFoundException, SQLException {
-        Connection conn = awsConnectionMaker.makeConnection();//db 연결
+        Connection conn = connectionMaker.makeConnection();//db 연결
         PreparedStatement ps = conn.prepareStatement("SELECT id, name, password FROM users WHERE ID =?");
         ps.setString(1, id);
 
@@ -39,7 +43,7 @@ public class UserDao2 {
     }
 
     public List<User> findAll() throws ClassNotFoundException, SQLException {
-        Connection conn = awsConnectionMaker.makeConnection();//db 연결
+        Connection conn = connectionMaker.makeConnection();//db 연결
         PreparedStatement ps = conn.prepareStatement("SELECT id, name, password FROM users");
 
         ResultSet rs = ps.executeQuery();
@@ -57,9 +61,9 @@ public class UserDao2 {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         UserDao2 userDao2 = new UserDao2();
-        User user = new User("7", "spiderMan", "1123");
+        User user = new User("8", "spiderPig", "1123");
         userDao2.add(user);
-        User user1 = userDao2.get("1");
+        User user1 = userDao2.get("8");
         System.out.println(user1.getName());
     }
 }
