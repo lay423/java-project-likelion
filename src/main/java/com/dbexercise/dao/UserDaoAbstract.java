@@ -1,4 +1,4 @@
-package com.dbexercise;
+package com.dbexercise.dao;
 
 import com.dbexercise.domain.User;
 
@@ -7,14 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class UserDao2 {
+public abstract class UserDaoAbstract {
 
-    private Connection makeConnection() throws SQLException, ClassNotFoundException {
-        Map<String, String> env = System.getenv();
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(env.get("DB_HOST"), env.get("DB_USER"), env.get("DB_PASSWORD"));  //db 연결
-        return conn;
-    }
+    public abstract Connection makeConnection() throws SQLException, ClassNotFoundException;
+
     public void add(User user) throws SQLException, ClassNotFoundException {
         Connection conn = makeConnection();//db 연결
         PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
@@ -60,14 +56,4 @@ public class UserDao2 {
         return userList;
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        UserDao2 userDao2 = new UserDao2();
-//        userDao2.add("4", "superMan", "12334");
-//        User user = userDao2.get("1");
-//        System.out.println(user.getName());
-//        List<User> userList = userDao2.findAll();
-//        for (User user1 : userList) {
-//            System.out.println(user1.getName());
-//        }
-    }
 }
