@@ -2,10 +2,14 @@
 
 ## 2022.10.18
 1. `star` : 사각형 별찍기 (재귀함수)
+   - 평행사변형
+2. `com.dbexercise` : UserDao
+   - interface, abstract
 
 ## 2022.10.17
 1. `drawStar` : 별찍기
 2. `com.dbexercise` : DB 연동하기
+3. codeUp 1081~1090
 
 ## 2022.10.14
 1. `sort` : 삽입정렬
