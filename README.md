@@ -1,8 +1,11 @@
 # java-project-likeLion
 
+## 2022.10.18
+1. `star` : 사각형 별찍기 (재귀함수)
+
 ## 2022.10.17
 1. `drawStar` : 별찍기
-2. 
+2. `com.dbexercise` : DB 연동하기
 
 ## 2022.10.14
 1. `sort` : 삽입정렬
