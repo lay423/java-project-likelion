@@ -52,6 +52,7 @@ public class HospitalDao {
         ps.setString(1, "1");
 
         ResultSet rs = ps.executeQuery();
+        rs.next();
         Hospital hospital = new Hospital(
                 rs.getString("id"),
                 rs.getString("address"),
