@@ -1,9 +1,12 @@
-package com.dbexercise2.domain;
+package algorithm.java1018.dbexercise.domain;
 
 public class User {
     private String id;
     private String name;
     private String password;
+
+    public User() {
+    }
 
     public User(String id, String name, String password) {
         this.id = id;
@@ -22,4 +25,5 @@ public class User {
     public String getPassword() {
         return password;
     }
+
 }

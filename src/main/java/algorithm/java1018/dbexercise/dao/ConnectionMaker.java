@@ -1,4 +1,4 @@
-package com.dbexercise.dao;
+package algorithm.java1018.dbexercise.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;

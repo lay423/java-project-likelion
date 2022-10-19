@@ -1,6 +1,6 @@
-package com.line.dao;
+package algorithm.java1013.line.dao;
 
-import com.line.domain.Hospital;
+import algorithm.java1013.line.domain.Hospital;
 
 import java.sql.*;
 import java.util.Map;

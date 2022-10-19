@@ -1,6 +1,6 @@
-package com.line.parser;
+package algorithm.java1013.line.parser;
 
-import com.line.domain.Hospital;
+import algorithm.java1013.line.domain.Hospital;
 
 public class HospitalParser implements Parser<Hospital> {
 

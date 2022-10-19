@@ -1,7 +1,7 @@
-package com.line;
+package algorithm.java1013.line;
 
-import com.line.domain.Hospital;
-import com.line.parser.HospitalParser;
+import algorithm.java1013.line.domain.Hospital;
+import algorithm.java1013.line.parser.HospitalParser;
 
 import java.io.IOException;
 import java.util.ArrayList;

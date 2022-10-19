@@ -1,6 +1,4 @@
-package com.line;
-
-import com.line.domain.Hospital;
+package algorithm.java1013.line;
 
 import java.io.*;
 import java.util.List;

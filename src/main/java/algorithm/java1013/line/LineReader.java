@@ -1,6 +1,6 @@
-package com.line;
+package algorithm.java1013.line;
 
-import com.line.parser.Parser;
+import algorithm.java1013.line.parser.Parser;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

@@ -1,11 +1,10 @@
-package com.dbexercise.dao;
+package algorithm.java1018.dbexercise.dao;
 
-import com.dbexercise.domain.User;
+import algorithm.java1018.dbexercise.domain.User;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class UserDao2 {
     private ConnectionMaker connectionMaker;

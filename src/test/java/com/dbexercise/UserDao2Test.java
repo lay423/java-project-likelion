@@ -1,8 +1,7 @@
 package com.dbexercise;
 
-import com.dbexercise.dao.AWSUserDaoImpl;
-import com.dbexercise.dao.UserDao2;
-import com.dbexercise.domain.User;
+import algorithm.java1018.dbexercise.dao.AWSUserDaoImpl;
+import algorithm.java1018.dbexercise.domain.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

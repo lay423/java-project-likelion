@@ -1,4 +1,4 @@
-package com.line.parser;
+package algorithm.java1013.line.parser;
 
 public interface Parser<T> {
     T parse(String str);

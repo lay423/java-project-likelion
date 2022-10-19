@@ -1,4 +1,4 @@
-package com.line.domain;
+package algorithm.java1013.line.domain;
 
 public class Hospital {
     private String id;

@@ -1,4 +1,4 @@
-package com.dbexercise2.dao;
+package com.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
