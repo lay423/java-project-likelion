@@ -1,5 +1,9 @@
 # java-project-likeLion
 
+## 2022.10.19
+1. `stack1` : 스택
+2. `com.dbexercise2` : 전날한거 복습, factory적용
+
 ## 2022.10.18
 1. `star` : 사각형 별찍기 (재귀함수)
    - 평행사변형
