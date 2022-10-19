@@ -23,6 +23,15 @@ public class UserDao {
         Connection conn = DriverManager.getConnection(env.get("DB_HOST"), env.get("DB_USER"), env.get("DB_PASSWORD"));  //db 연결
         return conn;
     }
+
+    public void deleteAll() throws SQLException {
+        Connection conn = makeConnection();
+        PreparedStatement ps = conn.prepareStatement("DELETE FROM users");
+        ps.executeUpdate();
+        ps.close();
+        conn.close();
+
+    }
     public void insert(User user) throws SQLException {
         Connection conn = makeConnection();
         PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
