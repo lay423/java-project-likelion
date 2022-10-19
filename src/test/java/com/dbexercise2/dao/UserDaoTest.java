@@ -14,10 +14,13 @@ class UserDaoTest {
     @Test
     @DisplayName("insert와 select가 잘 작동되는지 test")
     public void insertAndSelect() throws SQLException {
-        UserDao userDao = new UserDao();
-        User user = new User("9", "king", "1123");
+
+        //UserDao userDao = new UserDao();
+        UserDao userDao = new UserDaoFactory().awsUserDao();
+        User user = new User("10", "king", "1123");
         userDao.insert(user);
-        User selectUser = userDao.select("9");
+
+        User selectUser = userDao.select("10");
         Assertions.assertEquals("king", selectUser.getName());
     }
 }
