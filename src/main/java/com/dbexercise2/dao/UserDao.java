@@ -8,6 +8,11 @@ import java.util.Map;
 
 public class UserDao {
 
+    private ConnectionMaker connectionMaker;
+
+    public UserDao(){
+        connectionMaker = new AWSConnectionMaker();
+    }
     private Connection makeConnection() throws SQLException {
         Map<String, String> env = System.getenv();
         Connection conn = DriverManager.getConnection(env.get("DB_HOST"), env.get("DB_USER"), env.get("DB_PASSWORD"));  //db 연결
