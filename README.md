@@ -1,5 +1,8 @@
 # java-project-likeLion
 
+## 2022.10.20
+1. `stack2` : 스택 이어서
+
 ## 2022.10.19
 1. `stack1` : 스택
 2. `com.dbexercise2` : 전날한거 복습, factory적용
