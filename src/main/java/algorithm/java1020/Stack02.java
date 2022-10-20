@@ -38,4 +38,9 @@ public class Stack02 {
         this.arr[this.pointer] = value;
         this.pointer++;
     }
+
+    public int peek(){
+        if(isEmpty()) throw new EmptyStackException();
+        return this.arr[this.pointer-1];
+    }
 }

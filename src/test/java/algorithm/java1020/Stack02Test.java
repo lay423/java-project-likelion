@@ -29,5 +29,9 @@ class Stack02Test {
         assertThrows(EmptyStackException.class,()->{
            st.pop();
         });
+
+        st.push(10);
+        int peeked = st.peek();
+        assertEquals(10, peeked);
     }
 }
