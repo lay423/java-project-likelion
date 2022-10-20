@@ -32,12 +32,12 @@ public class UserDao {
         conn.close();
 
     }
-    public String getCount() throws SQLException {
+    public int getCount() throws SQLException {
         Connection conn = makeConnection();
         PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID) FROM users");
         ResultSet rs = ps.executeQuery();
         rs.next();
-        String s = rs.getString("COUNT(ID)");
+        int s = Integer.parseInt(rs.getString("COUNT(ID)"));
 
         ps.close();
         conn.close();
