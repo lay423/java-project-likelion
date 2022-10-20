@@ -27,10 +27,18 @@ class UserDaoTest {
 
         //UserDao userDao = new UserDao();
         UserDao userDao = context.getBean("awsUserDao", UserDao.class);
-        User user = new User("12", "king1", "11223");
+        User user = new User("13", "king2", "11223");
         userDao.insert(user);
 
-        User selectUser = userDao.select("12");
-        Assertions.assertEquals("king1", selectUser.getName());
+        User selectUser = userDao.select("13");
+        Assertions.assertEquals("king2", selectUser.getName());
+
+    }
+    @Test
+    @DisplayName("deleteALl 테스트")
+    public void deleteAll() throws SQLException {
+        UserDao userDao = context.getBean("awsUserDao", UserDao.class);
+        System.out.println(userDao.getCount());
+        userDao.deleteAll();
     }
 }

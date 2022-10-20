@@ -1,4 +1,4 @@
-package algorithm.java1018.dbexercise.domain;
+package algorithm.week5.java1018.dbexercise.domain;
 
 public class User {
     private String id;
