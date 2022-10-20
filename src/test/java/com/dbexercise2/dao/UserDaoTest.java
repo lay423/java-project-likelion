@@ -29,20 +29,23 @@ class UserDaoTest {
 
     @AfterEach
     void delete() throws SQLException {
-        UserDao userDao = context.getBean("awsUserDao", UserDao.class);
-        userDao.deleteAll();
     }
 
     @Test
     @DisplayName("insert와 select가 잘 작동되는지 test")
     public void insertAndSelect() throws SQLException {
+        User user = new User("1", "kingsMan", "11223");
 
         UserDao userDao = context.getBean("awsUserDao", UserDao.class);
-        User user = new User("1", "king2", "11223");
-        userDao.insert(user);
+        userDao.deleteAll();
+        assertEquals(0, userDao.getCount());
 
+        userDao.insert(user);
+        assertEquals(1, userDao.getCount());
         User selectUser = userDao.select("1");
-        assertEquals("king2", selectUser.getName());
+
+        assertEquals(user.getName(), selectUser.getName());
+        assertEquals(user.getPassword(), selectUser.getPassword());
 
     }
     @Test
