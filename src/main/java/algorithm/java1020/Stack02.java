@@ -1,5 +1,7 @@
 package algorithm.java1020;
 
+import java.util.EmptyStackException;
+
 public class Stack02 {
 
     private Integer[] arr;
@@ -14,9 +16,17 @@ public class Stack02 {
     }
 
     public int pop(){
+        if (this.isEmpty()) {
+            throw new EmptyStackException();
+        }
         this.pointer--;
         int value = this.arr[this.pointer];
         return value;
+    }
+
+    public boolean isEmpty(){
+        boolean isEmpty = this.pointer == 0;
+        return isEmpty;
     }
 
     public Integer[] getArr(){
