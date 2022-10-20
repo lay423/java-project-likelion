@@ -30,7 +30,7 @@ class UserDaoTest {
         User user = new User("13", "king2", "11223");
         userDao.insert(user);
 
-        User selectUser = userDao.select("13");
+        User selectUser = userDao.select("131");
         Assertions.assertEquals("king2", selectUser.getName());
 
     }
