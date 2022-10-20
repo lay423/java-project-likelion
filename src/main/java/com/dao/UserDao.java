@@ -32,12 +32,25 @@ public class UserDao {
         conn.close();
 
     }
+    public String getCount() throws SQLException {
+        Connection conn = makeConnection();
+        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID) FROM users");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        String s = rs.getString("COUNT(ID)");
+
+        ps.close();
+        conn.close();
+        return s;
+    }
+
     public void insert(User user) throws SQLException {
         Connection conn = makeConnection();
         PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
         ps.setString(1, user.getId());
         ps.setString(2, user.getName());
         ps.setString(3, user.getPassword());
+
 
         ps.executeUpdate();
         ps.close();

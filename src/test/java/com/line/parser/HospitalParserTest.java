@@ -1,7 +1,7 @@
 package com.line.parser;
 
-import algorithm.java1013.line.domain.Hospital;
-import algorithm.java1013.line.parser.HospitalParser;
+import algorithm.week4.java1013.line.domain.Hospital;
+import algorithm.week4.java1013.line.parser.HospitalParser;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
