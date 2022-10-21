@@ -29,6 +29,13 @@ public class SolveBracket {
         return answer;
     }
 
+    public boolean solution2(String s) {
+        while (s.indexOf("()") >= 0) {
+            s = s.replace("()", "");
+        }
+        return s.length() ==0;
+    }
+
     public static void main(String[] args) {
         SolveBracket solveBracket = new SolveBracket();
         String s = "()()";

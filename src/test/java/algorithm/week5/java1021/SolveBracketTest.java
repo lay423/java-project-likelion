@@ -17,5 +17,11 @@ class SolveBracketTest {
         assertFalse(sb.solution(")()("));
         assertFalse(sb.solution("(()("));
         assertFalse( sb.solution("((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))))"));
+
+        assertTrue(sb.solution2("()()"));
+        assertTrue(sb.solution2("(())()"));
+        assertFalse(sb.solution2(")()("));
+        assertFalse(sb.solution2("(()("));
+        assertFalse( sb.solution2("((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))))"));
     }
 }
