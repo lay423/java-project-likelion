@@ -1,6 +1,6 @@
-package com.likelion.dao;
+package com.hello.dao;
 
-import com.likelion.domain.User;
+import com.hello.domain.User;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.sql.*;

@@ -1,4 +1,4 @@
-package com.likelion.domain;
+package com.hello.domain;
 
 public class User {
     private String id;
