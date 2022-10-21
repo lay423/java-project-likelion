@@ -32,7 +32,7 @@ public class UserDao {
         try {
             c = makeConnection();
             //ps = c.prepareStatement("DELETE FROM users");
-            ps = new DeleteAllStrategy().makePreparedStatement(c);
+            ps = stmt.makePreparedStatement(c);
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -57,8 +57,6 @@ public class UserDao {
 
 
     public void deleteAll() throws SQLException {
-        Connection c = null;
-        PreparedStatement ps = null;
         jdbcContextWithStatementStrategy(new DeleteAllStrategy());
     }
     public void asd123() throws SQLException {
@@ -118,14 +116,7 @@ public class UserDao {
     }
     public void insert(User user) throws SQLException {
         Connection conn = makeConnection();
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
-        ps.setString(1, user.getId());
-        ps.setString(2, user.getName());
-        ps.setString(3, user.getPassword());
-
-        ps.executeUpdate();
-        ps.close();
-        conn.close();
+        jdbcContextWithStatementStrategy(new AddStrategy(user));
     }
     public User select(String id) throws SQLException {
         Connection conn = makeConnection();
