@@ -1,8 +1,8 @@
 package com.dbexercise2.dao;
 
-import com.dao.UserDao;
-import com.dao.UserDaoFactory;
-import com.domain.User;
+import com.likelion.dao.UserDao;
+import com.likelion.dao.UserDaoFactory;
+import com.likelion.domain.User;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
