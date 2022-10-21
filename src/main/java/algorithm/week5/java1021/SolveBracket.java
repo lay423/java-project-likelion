@@ -1,7 +1,24 @@
 package algorithm.week5.java1021;
 
+import java.util.Stack;
+
 public class SolveBracket {
+
     boolean solution(String s) {
+        Stack<Character> st = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if('(' == s.charAt(i)){
+                st.push(s.charAt(i));
+            } else{
+                if (st.empty()) {
+                    return false;
+                }
+                st.pop();
+            }
+        }
+        return st.empty();
+    }
+    boolean solution1(String s) {
         boolean answer = true;
         int a = 0, b = 0;
         int checkBracketOpen = 0;
