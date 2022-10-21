@@ -1,7 +1,11 @@
 # java-project-likeLion
 
+## 2022.10.21
+1. `bracket` : 올바른 괄호 구하기
+
 ## 2022.10.20
 1. `stack2` : 스택 이어서
+2. `com` : deleteAll(), getCount(), 스프링 적용
 
 ## 2022.10.19
 1. `stack1` : 스택
