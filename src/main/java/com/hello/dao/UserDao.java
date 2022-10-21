@@ -25,7 +25,7 @@ public class UserDao {
         return conn;
     }
 
-    public void deleteAll() throws SQLException {
+    public void jdbcContextWithStatementStrategy(StatementStrategy stmt) {
         Connection c = null;
         PreparedStatement ps = null;
 
@@ -52,7 +52,14 @@ public class UserDao {
                 }
             }
         }
+    }
 
+
+
+    public void deleteAll() throws SQLException {
+        Connection c = null;
+        PreparedStatement ps = null;
+        jdbcContextWithStatementStrategy(new DeleteAllStrategy());
     }
     public void asd123() throws SQLException {
         Connection c = makeConnection();
@@ -115,7 +122,6 @@ public class UserDao {
         ps.setString(1, user.getId());
         ps.setString(2, user.getName());
         ps.setString(3, user.getPassword());
-
 
         ps.executeUpdate();
         ps.close();
