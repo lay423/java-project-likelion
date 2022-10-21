@@ -53,7 +53,14 @@ public class UserDao {
         }
 
     }
+    public void asd123() throws SQLException {
+        Connection c = makeConnection();
+        PreparedStatement ps= c.prepareStatement("DELETE FROM users");
+        ps.executeUpdate();
 
+        ps.close();
+        c.close();
+    }
 
     public int getCount() throws SQLException {
         Connection conn = null;
@@ -70,28 +77,37 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException e) {
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                }
-            }
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                }
-            }
+            close(conn, ps, rs);
         }
         return s;
     }
 
+    private void close(AutoCloseable... autoCloseables){
+
+        for (AutoCloseable ac : autoCloseables) {
+            if (ac != null) {
+                try {
+                    ac.close();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+
+    public int getCount1() throws SQLException {
+        int s;
+        Connection conn  = makeConnection();
+        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID) FROM users");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        s = Integer.parseInt(rs.getString("COUNT(ID)"));
+        conn.close();
+        ps.close();
+        rs.close();
+
+        return s;
+    }
     public void insert(User user) throws SQLException {
         Connection conn = makeConnection();
         PreparedStatement ps = conn.prepareStatement("INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
