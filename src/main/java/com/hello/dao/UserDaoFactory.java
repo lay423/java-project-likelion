@@ -17,18 +17,6 @@ public class UserDaoFactory {
         return new UserDao(dataSource());
     }
 
-    @Bean
-    public UserDao awsUserDao1(){    // 날개 5개 선풍기
-        AWSConnectionMaker awsConnectionMaker = new AWSConnectionMaker();
-        UserDao userDao = new UserDao(awsConnectionMaker);
-        return userDao;
-    }
-
-    @Bean
-    public UserDao localUserDao() {
-        UserDao userDao = new UserDao(new LocalConnectionMaker());
-        return userDao;
-    }
 
     @Bean
     DataSource dataSource() {

@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class UserDao {
 
+    private JdbcContext jdbcContext;
     private ConnectionMaker connectionMaker;
 
     private DataSource dataSource;
@@ -20,6 +21,7 @@ public class UserDao {
 
     public UserDao(DataSource dataSource) {
         this.dataSource = dataSource;
+        this.jdbcContext = new JdbcContext(dataSource);
     }
 
     public UserDao(ConnectionMaker connectionMaker){
@@ -32,39 +34,10 @@ public class UserDao {
         return conn;
     }
 
-    public void jdbcContextWithStatementStrategy(StatementStrategy stmt) {
-        Connection c = null;
-        PreparedStatement ps = null;
-
-        try {
-            c = dataSource.getConnection();
-            //ps = c.prepareStatement("DELETE FROM users");
-            ps = stmt.makePreparedStatement(c);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            if (ps != null) {
-                try{
-                    ps.close();
-                }catch (SQLException e){
-
-                }
-            }
-            if (c != null) {
-                try{
-                    c.close();
-                }catch (SQLException e){
-
-                }
-            }
-        }
-    }
-
 
 
     public void deleteAll() throws SQLException {
-        jdbcContextWithStatementStrategy(new StatementStrategy() {
+        jdbcContext.workWithStatementStrategy(new StatementStrategy() {
             @Override
             public PreparedStatement makePreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement stmt = connection.prepareStatement("delete from users");
@@ -128,7 +101,7 @@ public class UserDao {
         return s;
     }
     public void insert(User user) throws SQLException {
-        jdbcContextWithStatementStrategy(new StatementStrategy() {
+        jdbcContext.workWithStatementStrategy(new StatementStrategy() {
             @Override
             public PreparedStatement makePreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement(
