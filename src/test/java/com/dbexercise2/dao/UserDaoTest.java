@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -74,7 +75,7 @@ class UserDaoTest {
     @Test
     @DisplayName("findById")
     public void select() throws SQLException {
-        assertThrows(SQLException.class, () ->{
+        assertThrows(EmptyResultDataAccessException.class, () ->{
             userDao.select("30");
         });
     }

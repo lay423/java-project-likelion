@@ -1,4 +1,6 @@
-package com.hello.dao;
+package com.hello.dao.review;
+
+import com.hello.dao.StatementStrategy;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

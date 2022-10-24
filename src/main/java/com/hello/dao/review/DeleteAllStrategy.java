@@ -1,4 +1,6 @@
-package com.hello.dao;
+package com.hello.dao.review;
+
+import com.hello.dao.StatementStrategy;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

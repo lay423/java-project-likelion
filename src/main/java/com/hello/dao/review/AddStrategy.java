@@ -1,12 +1,13 @@
-package com.hello.dao;
+package com.hello.dao.review;
 
+import com.hello.dao.StatementStrategy;
 import com.hello.domain.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AddStrategy implements StatementStrategy{
+public class AddStrategy implements StatementStrategy {
 
     private User user;
 
