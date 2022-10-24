@@ -1,4 +1,4 @@
-package com.hello.dao;
+package com.hello.dao.review;
 
 import com.hello.domain.User;
 

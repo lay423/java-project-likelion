@@ -1,5 +1,6 @@
-package com.hello.dao;
+package com.hello.dao.review;
 
+import com.hello.dao.*;
 import com.hello.domain.User;
 
 import java.sql.Connection;

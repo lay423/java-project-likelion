@@ -3,6 +3,7 @@ package com.hello.dao;
 import com.hello.domain.User;
 import org.springframework.dao.EmptyResultDataAccessException;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Map;
 
@@ -11,8 +12,14 @@ public class UserDao {
 
     private ConnectionMaker connectionMaker;
 
+    private DataSource dataSource;
+
     public UserDao(){
         connectionMaker = new AWSConnectionMaker();
+    }
+
+    public UserDao(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     public UserDao(ConnectionMaker connectionMaker){
@@ -30,7 +37,7 @@ public class UserDao {
         PreparedStatement ps = null;
 
         try {
-            c = makeConnection();
+            c = dataSource.getConnection();
             //ps = c.prepareStatement("DELETE FROM users");
             ps = stmt.makePreparedStatement(c);
             ps.executeUpdate();
