@@ -64,7 +64,13 @@ public class UserDao {
 
 
     public void deleteAll() throws SQLException {
-        jdbcContextWithStatementStrategy(new DeleteAllStrategy());
+        jdbcContextWithStatementStrategy(new StatementStrategy() {
+            @Override
+            public PreparedStatement makePreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement stmt = connection.prepareStatement("delete from users");
+                return stmt;
+            }
+        });
     }
     public void asd123() throws SQLException {
         Connection c = makeConnection();
