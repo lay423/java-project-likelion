@@ -115,7 +115,6 @@ public class UserDao {
         return s;
     }
     public void insert(User user) throws SQLException {
-        Connection conn = makeConnection();
         jdbcContextWithStatementStrategy(new AddStrategy(user));
     }
     public User select(String id) throws SQLException {
