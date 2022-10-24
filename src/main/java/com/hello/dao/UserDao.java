@@ -128,7 +128,17 @@ public class UserDao {
         return s;
     }
     public void insert(User user) throws SQLException {
-        jdbcContextWithStatementStrategy(new AddStrategy(user));
+        jdbcContextWithStatementStrategy(new StatementStrategy() {
+            @Override
+            public PreparedStatement makePreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement ps = connection.prepareStatement(
+                        "INSERT INTO users(id, name, password) VALUES(?, ?, ?)");
+                ps.setString(1, user.getId());
+                ps.setString(2, user.getName());
+                ps.setString(3, user.getPassword());
+                return ps;
+            }
+        });
     }
     public User select(String id) throws SQLException {
         Connection conn = makeConnection();
