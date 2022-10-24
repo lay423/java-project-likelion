@@ -12,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -78,5 +79,19 @@ class UserDaoTest {
         assertThrows(EmptyResultDataAccessException.class, () ->{
             userDao.select("30");
         });
+    }
+
+    @Test
+    @DisplayName("없응ㄹ때 빈 리스트 리턴하는지, 있을 때 개수만큼 리턴 하는지")
+    void getALlTest() throws SQLException {
+        userDao.deleteAll();
+        List<User> users = userDao.getAll();
+        assertEquals(0, users.size());
+        userDao.insert(user1);
+        userDao.insert(user2);
+        userDao.insert(user3);
+        users = userDao.getAll();
+        assertEquals(3, users.size());
+
     }
 }
