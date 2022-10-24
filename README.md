@@ -1,5 +1,9 @@
 # java-project-likeLion
 
+## 2022.10.24
+1. `IdxNum` : K번재 수 구하기
+   - Array
+
 ## 2022.10.21
 1. `bracket` : 올바른 괄호 구하기
 
