@@ -22,8 +22,16 @@ public class HashTable {
             return value;
         }
     }
-    private int size = 1000;
+    private int size = 10000;
     private List<Node>[] table = new ArrayList[size];
+
+    public HashTable() {
+    }
+
+    public HashTable(int size) {
+        this.size = size;
+        this.table = new ArrayList[size];
+    }
 
     public void insert(String key, Integer value) {
         //List
