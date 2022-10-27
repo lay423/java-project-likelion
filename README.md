@@ -1,5 +1,14 @@
 # java-project-likeLion
 
+## 2022.10.27
+1. `Marathoner` : 프로그래머스 완주하지 못한 선수
+
+## 2022.10.26
+1. `HashTable` : 해쉬 이어서, List[Integer] table
+
+## 2022.10.25
+1. `HashTest` : 해쉬 구현
+
 ## 2022.10.24
 1. `IdxNum` : K번재 수 구하기
    - Array
