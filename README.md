@@ -1,5 +1,8 @@
 # java-project-likeLion
 
+## 2022.10.28
+1. `Pokemon2` : 프로그래머스 폰켓몬
+
 ## 2022.10.27
 1. `Marathoner` : 프로그래머스 완주하지 못한 선수
 
