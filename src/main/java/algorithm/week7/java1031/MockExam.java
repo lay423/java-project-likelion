@@ -1,12 +1,15 @@
 package algorithm.week7.java1031;
 
+import java.util.Arrays;
+
 public class MockExam {
     public int[] solution(int[] answer) {
         int[] std1 = {1, 2, 3, 4, 5};
         int[] std2 = {2, 1, 2, 3, 2, 4, 2, 5};
         int[] std3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-        int[] stdAnswerCnt = new int[3];
+        int[] stdAnswerCnt = {0, 0, 0};
         int[] stdAnswerCntIdx = {1, 2, 3};
+        int[] solAnswer = new int[3];
         for (int i = 0; i < answer.length; i++) {
             if (answer[i] == std1[i % 5]) {
                 stdAnswerCnt[0]++;
@@ -31,19 +34,35 @@ public class MockExam {
                 }
             }
         }
+        solAnswer[0] = stdAnswerCntIdx[0];
 
-        for (int i = 0; i < stdAnswerCntIdx.length; i++) {
-            System.out.printf("수포자 %d은 %d개의 문제를 맞혔습니다.\n", stdAnswerCntIdx[i], stdAnswerCnt[i]);
+        if (stdAnswerCnt[0] == stdAnswerCnt[1]) {
+            solAnswer[1] = stdAnswerCntIdx[1];
+            if (stdAnswerCnt[1] == stdAnswerCnt[2]) {
+                solAnswer[2] = stdAnswerCntIdx[2];
+            }
         }
-        return answer;
+
+        int arrNum = 3;
+        for (int i = 0; i < solAnswer.length; i++) {
+            if (stdAnswerCnt[i] == 0) {
+                arrNum = i - 1;
+            }
+        }
+        int[] corAnswer = new int[arrNum];
+        for (int i = 0; i < corAnswer.length; i++) {
+            corAnswer[i] = solAnswer[i];
+        }
+        return corAnswer;
     }
 
     public static void main(String[] args) {
-        int[] answer1 = {1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5};
+        int[] answer1 = {1, 3, 2, 4, 2};
         int[] answer2 = {3, 3, 2, 1, 2, 5, 3, 2};
         MockExam mExam = new MockExam();
-        mExam.solution(answer1);
-        mExam.solution(answer2);
+        System.out.println(Arrays.toString(mExam.solution(answer1)));
+        System.out.println(Arrays.toString(mExam.solution(answer2)));
+
     /*
         수포자 1은 15개의 문제를 맞혔습니다.
         수포자 2은 2개의 문제를 맞혔습니다.
