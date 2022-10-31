@@ -44,9 +44,16 @@ public class MockExam {
         }
 
         int arrNum = 3;
-        for (int i = 0; i < solAnswer.length; i++) {
-            if (stdAnswerCnt[i] == 0) {
-                arrNum = i - 1;
+        if (stdAnswerCnt[0] == 0) {
+            arrNum = 0;
+        }
+        
+        if (arrNum != 0) {
+            for (int i = 0; i < solAnswer.length; i++) {
+                if (solAnswer[i] == 0) {
+                    arrNum = i;
+                    break;
+                }
             }
         }
         int[] corAnswer = new int[arrNum];
@@ -57,7 +64,7 @@ public class MockExam {
     }
 
     public static void main(String[] args) {
-        int[] answer1 = {1, 3, 2, 4, 2};
+        int[] answer1 = {1, 2, 3, 4, 5};
         int[] answer2 = {3, 3, 2, 1, 2, 5, 3, 2};
         MockExam mExam = new MockExam();
         System.out.println(Arrays.toString(mExam.solution(answer1)));
