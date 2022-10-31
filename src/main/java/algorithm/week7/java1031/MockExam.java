@@ -2,20 +2,20 @@ package algorithm.week7.java1031;
 
 public class MockExam {
     public int[] solution(int[] answer) {
-        int[] std1 = {1, 2, 3, 4, 5, 1, 2, 3, 4, 5};
-        int[] std2 = {2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5};
-        int[] std3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-        int firstStdAnswerCnt=0;
-        int secondStdAnswerCnt=0;
-        int thirdStdAnswerCnt=0;
+        int[] std1 = {1, 2, 3, 4, 5};
+        int[] std2 = {2, 1, 2, 3, 2, 4, 2, 5};
+        int[] std3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+        int firstStdAnswerCnt = 0;
+        int secondStdAnswerCnt = 0;
+        int thirdStdAnswerCnt = 0;
         for (int i = 0; i < answer.length; i++) {
-            if (answer[i] == std1[i]) {
+            if (answer[i] == std1[i % 5]) {
                 firstStdAnswerCnt++;
             }
-            if (answer[i] == std2[i]) {
+            if (answer[i] == std2[i % 8]) {
                 secondStdAnswerCnt++;
             }
-            if (answer[i] == std3[i]) {
+            if (answer[i] == std3[i % 10]) {
                 thirdStdAnswerCnt++;
             }
         }
@@ -26,8 +26,8 @@ public class MockExam {
     }
 
     public static void main(String[] args) {
-        int[] answer1 = {1, 2, 3, 4, 5};
-        int[] answer2 = {1, 3, 2, 4, 2};
+        int[] answer1 = {1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5};
+        int[] answer2 = {1, 3, 2, 4, 2, 1, 3, 2, 4, 2, 1, 3, 2, 4, 2};
         MockExam mExam = new MockExam();
         mExam.solution(answer1);
         mExam.solution(answer2);
