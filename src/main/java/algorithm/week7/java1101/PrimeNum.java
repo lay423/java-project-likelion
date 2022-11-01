@@ -38,5 +38,6 @@ public class PrimeNum {
         pn.isPrimeNum(17);
         pn.isPrimeNum(19);
         pn.isPrimeNum(20);
+        pn.isPrimeNum(31);
     }
 }
