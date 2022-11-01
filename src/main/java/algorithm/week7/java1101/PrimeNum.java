@@ -1,5 +1,9 @@
 package algorithm.week7.java1101;
 
+interface StatementStrategy {
+    boolean compare(int a, int b);
+}
+
 public class PrimeNum {
     public int solution(int n) {
         int answer = 0;
@@ -16,11 +20,8 @@ public class PrimeNum {
         return answer;
     }
 
-    boolean someOperation(int a, int b) {
-        return a<b;
-    }
-    public boolean isPrimeNum( int n) {
-        for (int i = 2; someOperation(i, n); i++) {
+    public boolean isPrimeNum( int n, StatementStrategy stmt) {
+        for (int i = 2; stmt.compare(i, n); i++) {
             if (n % i == 0) return false;
         }
             return true;
