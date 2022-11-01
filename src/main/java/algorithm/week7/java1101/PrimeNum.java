@@ -16,28 +16,18 @@ public class PrimeNum {
         return answer;
     }
 
-    public boolean isPrimeNum(int n) {
-        int cntDivisor=0;
-        for (int i = 2; i < n/2; i++) {
-            if (n % i == 0) {
-                cntDivisor++;
-            }
+    boolean someOperation(int a, int b) {
+        return a<b;
+    }
+    public boolean isPrimeNum( int n) {
+        for (int i = 2; someOperation(i, n); i++) {
+            if (n % i == 0) return false;
         }
-        if (cntDivisor == 0) {
-            System.out.printf("%d는 소수입니다.", n);
             return true;
-        }else {
-            System.out.printf("%d는 소수가 아닙니다.", n);
-            return false;
-        }
     }
 
     public static void main(String[] args) {
         PrimeNum pn = new PrimeNum();
-        pn.isPrimeNum(13);
-        pn.isPrimeNum(17);
-        pn.isPrimeNum(19);
-        pn.isPrimeNum(20);
-        pn.isPrimeNum(31);
+        System.out.println(pn.isPrimeNum(13));
     }
 }
