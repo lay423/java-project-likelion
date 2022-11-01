@@ -29,6 +29,8 @@ public class PrimeNum {
 
     public static void main(String[] args) {
         PrimeNum pn = new PrimeNum();
-        System.out.println(pn.isPrimeNum(13));
+        System.out.println( pn.isPrimeNum(13, (a, b) -> a * a < b));
+        System.out.println( pn.isPrimeNum(17, (a, b) -> a < b/2));
+        System.out.println( pn.isPrimeNum(19, (a, b) -> a  < b));
     }
 }
