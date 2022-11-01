@@ -1,5 +1,8 @@
 # java-project-likeLion
 
+## 2022.10.31
+1. `MockExam` : 프로그래머스 모의고사
+
 ## 2022.10.28
 1. `Pokemon2` : 프로그래머스 폰켓몬
 
