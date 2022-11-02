@@ -10,7 +10,7 @@ public class PrimeNum {
         for (int i = 2; i <= n; i++) {
             primeNums.add(i);
         }
-        for (int i = 2; i < n; i++) {
+        for (int i = 2; i*i < n; i++) {
             if(!(primeNums.contains(i)))
                 continue;
             for (int j = 1; j < primeNums.size(); j++) {
@@ -24,6 +24,7 @@ public class PrimeNum {
 
     public static void main(String[] args) {
         PrimeNum pn = new PrimeNum();
-        System.out.println(pn.solution(100));
+        System.out.println(pn.solution(97));
+
     }
 }
