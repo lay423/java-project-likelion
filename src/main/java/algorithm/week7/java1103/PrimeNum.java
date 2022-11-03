@@ -13,10 +13,18 @@ public class PrimeNum {
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i+2;
         }
+        for (int i = 2; i < checks.length; i += 2) {
+            checks[i]= false;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (checks[i]) {
+                System.out.println(nums[i]);
+            }
+        }
         return cnt;
     }
     public static void main(String[] args) {
         PrimeNum pn = new PrimeNum();
-        System.out.println(pn.solution(50));
+        pn.solution(50);
     }
 }
