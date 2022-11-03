@@ -1,7 +1,7 @@
 # java-project-likeLion
 
 ## 2022.11.02
-1. `PrimeNum` : 소수찾기 | 에라토스테네스의 채
+1. `PrimeNum` : 소수찾기 | array, loop, if만 사용
 
 ## 2022.11.02
 1. `PrimeNum` : 소수찾기 | 에라토스테네스의 채
