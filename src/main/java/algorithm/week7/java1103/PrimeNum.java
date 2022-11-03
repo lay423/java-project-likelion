@@ -6,25 +6,28 @@ public class PrimeNum {
 
 
     int solution(int n){
-        int cnt = n;
         int[] nums = new int[n-1];
         boolean[] checks = new boolean[nums.length];
         Arrays.fill(checks, true);
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i+2;
         }
-        for (int i = 2; i < checks.length; i += 2) {
-            checks[i]= false;
+        for (int i = 2; i < n; i++) {
+            for (int j = 2*(i-1); j < checks.length; j += i) {
+                checks[j]=false;
+            }
         }
+
+        int cnt=0;
         for (int i = 0; i < nums.length; i++) {
             if (checks[i]) {
-                System.out.println(nums[i]);
+                cnt++;
             }
         }
         return cnt;
     }
     public static void main(String[] args) {
         PrimeNum pn = new PrimeNum();
-        pn.solution(50);
+        System.out.println(pn.solution(5));
     }
 }
