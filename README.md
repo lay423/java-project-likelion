@@ -2,6 +2,7 @@
 
 ## 2022.11.07
 1. `Harshad` : 프로그래머스 하샤드 수
+2. `DivisibleArrayNum` : 프로그래머스 나누어떨어지는 숫자배열
 
 ## 2022.11.03
 1. `PrimeNum` : 소수찾기 | array, loop, if만 사용
