@@ -21,6 +21,7 @@ public class DivisibleArrayNum {
         for (int i = 0; i < answer.length; i++) {
             answer[i] = answers.get(i);
         }
+        Arrays.sort(answer);
         return answer;
     }
 
