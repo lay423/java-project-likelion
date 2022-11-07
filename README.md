@@ -1,6 +1,9 @@
 # java-project-likeLion
 
-## 2022.11.02
+## 2022.11.07
+1. `Harshad` : 프로그래머스 하샤드 수
+
+## 2022.11.03
 1. `PrimeNum` : 소수찾기 | array, loop, if만 사용
 
 ## 2022.11.02
