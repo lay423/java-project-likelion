@@ -1,5 +1,8 @@
 # java-project-likeLion
 
+## 2022.11.08
+1. `LinearSearch` : codeUp3001 : 데이터 탐색
+
 ## 2022.11.07
 1. `Harshad` : 프로그래머스 하샤드 수
 2. `DivisibleArrayNum` : 프로그래머스 나누어떨어지는 숫자배열
