@@ -1,5 +1,9 @@
 # java-project-likeLion
 
+## 2022.11.10
+1. `ExceptSameNum` : 프로그래머스 같은 숫자는 싫어
+2. `FuncDevelop` : 프로그래머스 기능개발
+
 ## 2022.11.09
 1. `SelectionSort` : 선택정렬
 
