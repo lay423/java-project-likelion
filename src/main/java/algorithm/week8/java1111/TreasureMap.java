@@ -5,10 +5,13 @@ import java.util.Arrays;
 public class TreasureMap {
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
-        int divNum;
-
+        int divNum=1;
+        int defaultNum=1;
+        for(int i=1;i<n;i++)
+            defaultNum*=2;
+        System.out.println(divNum);
         for (int idx = 0; idx < answer.length; idx++) {
-            divNum = 16;
+            divNum = defaultNum;
             answer[idx] = "";
             while (divNum >= 1) {
                 if(arr1[idx]/divNum>0 || arr2[idx]/divNum>0){
