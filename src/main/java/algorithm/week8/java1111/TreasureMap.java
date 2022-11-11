@@ -52,6 +52,17 @@ public class TreasureMap {
         return answer;
     }
 
+    public String[] solution3(int n, int[] arr1, int[] arr2) {
+        var answer = new String[n];
+        for (int i = 0; i < n; i++) {
+            answer[i] = Integer.toBinaryString(arr1[i] | arr2[i])
+                    .replace("1", "#").replace("0", " ");
+            answer[i] = " ".repeat(n - answer[i].length()) + answer[i];
+        }
+
+        return answer;
+    }
+
     public static void main(String[] args) {
         TreasureMap tm = new TreasureMap();
 //        int n = 5;
