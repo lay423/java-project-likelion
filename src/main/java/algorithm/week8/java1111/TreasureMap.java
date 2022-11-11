@@ -9,18 +9,15 @@ public class TreasureMap {
         int defaultNum=1;
         for(int i=1;i<n;i++)
             defaultNum*=2;
-        System.out.println(divNum);
         for (int idx = 0; idx < answer.length; idx++) {
             divNum = defaultNum;
             answer[idx] = "";
             while (divNum >= 1) {
                 if(arr1[idx]/divNum>0 || arr2[idx]/divNum>0){
-                    System.out.println(idx+" 나눠지네 1: "+arr1[idx]+" 2: "+arr2[idx]);
                     answer[idx] += "#";
                     arr1[idx]%=divNum;
                     arr2[idx]%=divNum;
                 }else {
-                    System.out.println(idx+" 안나눠짐 1: "+arr1[idx]+" 2: "+arr2[idx]);
                     answer[idx] += " ";
                 }
                 divNum/=2;
