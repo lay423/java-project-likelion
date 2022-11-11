@@ -27,6 +27,31 @@ public class TreasureMap {
         return answer;
     }
 
+    public String toBinaryString(int n) {
+        String answer = "";
+        while (n > 0) {
+            System.out.println(answer);
+            answer += n % 2;
+            n /=2;
+        }
+        return answer;
+    }
+
+    public String solution2(int n, int[] arr1, int[] arr2) {
+        String answer = "";
+        String[] sArr1 = new String[n];
+        String[] sArr2 = new String[n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                String binStr1 = toBinaryString(arr1[i]);
+                String binStr2 = toBinaryString(arr2[i]);
+                sArr1[i] = "0".repeat(n - binStr1.length()) + binStr1;
+                sArr2[i] = "0".repeat(n - binStr2.length()) + toBinaryString(arr2[i]);
+            }
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         TreasureMap tm = new TreasureMap();
 //        int n = 5;
@@ -38,6 +63,7 @@ public class TreasureMap {
         int[] arr2 = new int[]{27, 56, 19, 14, 14, 10};
         System.out.println(Arrays.toString(tm.solution(n, arr1, arr2)));
 
+        System.out.println(tm.toBinaryString(n));
 
         //출력	["#####","# # #", "### #", "# ##", "#####"]
         //	["######", "### #", "## ##", " #### ", " #####", "### # "]
