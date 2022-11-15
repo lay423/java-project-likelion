@@ -14,6 +14,7 @@ public class QuickSort {
 
     }
     public List<Integer> sort(List<Integer> arr) {
+        if(arr.size()<=1) return arr;
         List<Integer> firstList = new ArrayList<>();
         List<Integer> midList = new ArrayList<>();
         List<Integer> lastList = new ArrayList<>();
@@ -27,7 +28,7 @@ public class QuickSort {
                 midList.add(arr.get(i));
             }
         }
-        return merge(sort(firstList), sort(midList), sort(lastList));
+        return merge(sort(firstList), midList, sort(lastList));
     }
 
     public static void main(String[] args) {
