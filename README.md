@@ -1,6 +1,12 @@
 # java-project-likeLion
 
-## 2022.11.10
+## 2022.11.16
+1. `QuickSort` : 퀵정렬
+
+## 2022.11.15
+1. `QuickSort` : 퀵정렬 | List 사용
+
+## 2022.11.11
 1. `TreasureMap` : 프로그래머스 보물지도
 
 ## 2022.11.10
