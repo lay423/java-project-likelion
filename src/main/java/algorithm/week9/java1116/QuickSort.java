@@ -11,6 +11,9 @@ public class QuickSort {
         QuickSort qs = new QuickSort();
         int[] arr = new int[]{20, 18, 5, 19, 40, 25, 5, 50};
         int pivot = arr[arr.length / 2];
-        System.out.println(pivot);
+        int leftIdx =0;
+        while (arr[leftIdx] < pivot) {
+            leftIdx +=1;
+        }
     }
 }
