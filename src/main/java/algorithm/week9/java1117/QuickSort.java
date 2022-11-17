@@ -4,8 +4,12 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-    public int[] sort(int[] arr, int startIdx, int endIdx) {
-        int pivot = arr[arr.length / 2];
+    public int[] sort(int[] arr, int leftIdx, int rightIdx) {
+
+
+        int startIdx = leftIdx;
+        int endIdx = rightIdx;
+        int pivot = arr[(startIdx+endIdx) / 2];
 
         while (startIdx <= endIdx) {
 
@@ -20,6 +24,8 @@ public class QuickSort {
                 endIdx -= 1;
             }
         }
+        if(leftIdx < startIdx) sort(arr, leftIdx, endIdx);
+        if(startIdx < rightIdx) sort(arr, startIdx, rightIdx);
         return arr;
     }
 
