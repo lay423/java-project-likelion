@@ -5,15 +5,18 @@ import org.junit.jupiter.api.Assertions;
 public class CaesarCipher {
     public String solution(String s, int n) {
         String answer = "";
-        for (int i = 0; i < s.length(); i++) {
-            if((s.charAt(i)==' ')) answer += s.charAt(i);
-            else if((s.charAt(i))<97&&(s.charAt(i)+n)>90)
-                answer += (char)(s.charAt(i)+n-26);
-            else if ((s.charAt(i))>90&&(s.charAt(i)+n)>122)
-                answer += (char)(s.charAt(i)+n-26);
-            else answer += (char)(s.charAt(i)+n);
-        }
+        StringBuffer sb = new StringBuffer();
 
+        for (int i = 0; i < s.length(); i++) {
+            if ((s.charAt(i) == ' ')) {
+                sb.append(s.charAt(i));                        //띄어쓰기는 그대로
+            } else if ((s.charAt(i)) < 97 && (s.charAt(i) + n) > 90 || (s.charAt(i)) > 90 && (s.charAt(i) + n) > 122) {
+                //Z 이상으로 넘어갈때
+                sb.append((char) (s.charAt(i) + n - 26));
+            } else
+                sb.append((char) (s.charAt(i) + n));             //그 외 경우
+        }
+        answer = sb.toString();
         return answer;
     }
 
