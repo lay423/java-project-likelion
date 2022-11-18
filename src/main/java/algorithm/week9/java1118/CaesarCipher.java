@@ -22,9 +22,6 @@ public class CaesarCipher {
         String s1 = "AB";
         String s2 = "z";
         String s3 = "a B z";
-        System.out.println(cc.solution(s1, 1));
-        System.out.println(cc.solution(s2, 1));
-        System.out.println(cc.solution(s3, 4));
         Assertions.assertEquals(cc.solution(s1, 1), "BC");
         Assertions.assertEquals(cc.solution(s2, 1), "a");
         Assertions.assertEquals(cc.solution(s3, 4), "e F d");
