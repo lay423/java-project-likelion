@@ -25,13 +25,15 @@ public class Print1to100 {
 
     }
 
+    public static int arrSum(int[] arr, int answer, int idx) {
+        if(arr.length==idx) return answer;
+
+        return arrSum(arr, answer+arr[idx], idx+1);
+    }
+
     public static void main(String[] args) {
-        List<Integer> nums = new ArrayList<>();
-        nums.add(7);
-        nums.add(2);
-        nums.add(3);
-        nums.add(4);
-        System.out.println(sum(nums));
+        int[] arr = new int[]{7, 3, 2, 9};
+        System.out.println(arrSum(arr, 0, 0));
 
     }
 }
