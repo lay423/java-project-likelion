@@ -23,7 +23,7 @@ public class DrawStar {
     }
 
     public static void main(String[] args) {
-        Main main = new Main();
+        DrawStar main = new DrawStar();
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         main.drawRow(num);
