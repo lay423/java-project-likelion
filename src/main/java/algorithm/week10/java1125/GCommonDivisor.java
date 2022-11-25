@@ -9,6 +9,15 @@ public class GCommonDivisor {
         return gcd(a, b, div - 1);
     }
 
+    public static int gcd2(int a, int b) {
+        if(a>b)
+            return gcd2(a - b, b);
+        else if (a < b) {
+            return gcd2(a, b - a);
+        }else
+            return a;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
@@ -20,6 +29,6 @@ public class GCommonDivisor {
             div=a;
         }
         System.out.println(gcd(a, b, div));
-
+        System.out.println(gcd2(a, b));
     }
 }
