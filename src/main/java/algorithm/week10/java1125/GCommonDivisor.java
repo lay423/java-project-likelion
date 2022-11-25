@@ -16,13 +16,10 @@ public class GCommonDivisor {
         else return 1;
     }
 
-    public static int gcd3(int a, int b){
+    public static int gcd3(int a, int b) {
         while (a != b) {
-            if (a > b) {
-                a = a-b;
-            }else {
-                b = b-a;
-            }
+            if (a > b) a = a - b;
+            else b = b - a;
         }
         return a;
     }
@@ -34,6 +31,6 @@ public class GCommonDivisor {
 
         System.out.println(gcd(a, b, Math.min(a, b)));
         System.out.println(gcd2(a, b));
-        System.out.println(gcd3(a,b));
+        System.out.println(gcd3(a, b));
     }
 }
