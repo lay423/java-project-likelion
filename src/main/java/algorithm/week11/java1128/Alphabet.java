@@ -14,9 +14,25 @@ public class Alphabet {
             }
         }
     }
+    public static void printAtoZ2(int n){
+        if(n==91)
+            return;
+        System.out.println((char)n);
+        printAtoZ2(n+1);
+    }
+
+    public static void printAAtoZZ2(int a, int b) {
+        if(a==90&&b==91)
+            return;
+        else if (b == 91) {
+            b=60;
+            a++;
+        }
+        System.out.println(""+(char)a+(char)b);
+        printAAtoZZ2(a,b+1);
+    }
 
     public static void main(String[] args) {
-        printAtoZ();
-        printAAtoZZ();
+        printAAtoZZ2(65,65);
     }
 }
