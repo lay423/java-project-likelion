@@ -1,5 +1,31 @@
 # java-project-likeLion
 
+## 2022.12.02
+1. `PrimeFact` : codeUp4037 | 소인수분해
+
+## 2022.12.01
+1. `HallOfFame` : 프로그래머스 명예의 전당
+
+## 2022.11.30
+1. `BinaryTree` : 이진트리 노드간의 거리
+2. `CntPny` : p와 y의 갯수
+3. `SumOfCommonDivisor` : 약수의 합
+
+## 2022.11.29
+1. `RedixSort` : 기수정렬
+
+## 2022.11.28
+1. `Alphabet` : 재귀 | 알파벳 출력
+
+## 2022.11.25
+1. `GCommonDivisor` : 최대공약수
+2. `Recur` : recur() | 재귀함수
+
+## 2022.11.24
+1. `Fibonacci` : 재귀함수 | 피보나치
+2. `DrawStar` : 재귀함수 | 별찍기
+3. `NumTri` : 재귀함수 | 삼각형 출력
+
 ## 2022.11.23
 1. `PrintStar` : 재귀함수 | 별출력, 피보나치
 2. `Fibonacci` : 재귀없이 | 피보나치
