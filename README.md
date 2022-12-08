@@ -1,5 +1,18 @@
 # java-project-likeLion
 
+## 2022.12.08
+1. `Fibonacci` : 피보나치 | 다이나믹 프로그래밍
+2. `LCS` : longest common sequence
+
+## 2022.12.07
+1. `Scoville` : 프로그래머스 스코빌
+
+## 2022.12.06
+1. `HeapSort2` : 힙정렬
+
+## 2022.12.05
+1. `HeapSort` : 힙정렬
+
 ## 2022.12.02
 1. `PrimeFact` : codeUp4037 | 소인수분해
 
